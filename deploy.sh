@@ -72,7 +72,7 @@ case "${ACTION}" in
     ;;
     
   *)
-    echo "Error: ${ACTION}: Unknown action. Aborted!"
+    echo "Error: Unknown action: ${ACTION}. Aborted!"
     echo "${CMD_EXAMPLES}"
     exit 1
     ;;    
