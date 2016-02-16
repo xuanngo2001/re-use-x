@@ -4,7 +4,7 @@ set -e
 # Usage: this_script.sh <ACTION> <SOURCE_DIR> <DESTINATION_DIR> [FILE_LIST]
 #   [FILE_LIST] is optional.
 
-ACTION=$1
+ACTION=$(echo "$1" | tr '[:upper:]'  '[:lower:]')
 SOURCE_DIR=$2
 DEST_DIR=$3
 FILE_LIST=$4
