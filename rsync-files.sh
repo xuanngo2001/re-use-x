@@ -53,7 +53,6 @@ SCRIPT_NAME=$(basename "$0")
 
 
 # Rsync
-DATE_STRING=$(date +"%Y-%m-%d_%0k.%M.%S")
 case "${ACTION}" in
   
   commit)
