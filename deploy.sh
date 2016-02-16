@@ -2,8 +2,8 @@
 set -e
 # Description: Copy from SOURCE/ to DESTINATION/ and delete extraneous files from the receiving side. 
 
-SOURCE_DIR="."
-DEST_DIR=/media/sf_shared/firstboot
+SOURCE_DIR=$1
+DEST_DIR=$2
 
 # Error handling
 if [ ! -d "${SOURCE_DIR}" ]; then
