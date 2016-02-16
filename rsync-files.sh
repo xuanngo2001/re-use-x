@@ -56,7 +56,7 @@ SCRIPT_NAME=$(basename "$0")
 case "${ACTION}" in
   
   commit)
-    # Really commit deployment. 
+    # Really commit. 
     rsync -a --checksum --progress --itemize-changes --stats --out-format='%i %n %M %l' "${FILES_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/"
     ;;
     
