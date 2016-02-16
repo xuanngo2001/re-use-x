@@ -2,7 +2,8 @@
 set -e
 # Description: Copy from SOURCE/ to DESTINATION/ and delete extraneous files from the receiving side.
 # Usage: this_script.sh <ACTION> <SOURCE_DIR> <DESTINATION_DIR> [EXCLUDE_LIST]
-#  [EXCLUDE_LIST] is optional.
+#   [EXCLUDE_LIST] is optional.
+# Output: When commit, log file created at ./deploy_logs/deploy_2016-02-16_15.13.35.log.
 
 ACTION=$1
 SOURCE_DIR=$2
