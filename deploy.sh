@@ -39,7 +39,7 @@ case "${ACTION}" in
     ;;
     
   *)
-    rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%t %p %i %n %M %l' --dry-run --exclude-from="${EXCLUDE_LIST}" "${SOURCE_DIR}/" "${DEST_DIR}/" > "${DEPLOY_LOG_DIR}/deploy_${DATE_STRING}.log"
+    rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%t %p %i %n %M %l' --dry-run --exclude-from="${EXCLUDE_LIST}" "${SOURCE_DIR}/" "${DEST_DIR}/"
     ;;
 esac
 
