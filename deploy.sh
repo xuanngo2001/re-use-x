@@ -60,12 +60,12 @@ case "${ACTION}" in
   
   commit)
     # Really commit deployment. 
-    rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%t %p %i %n %M %l' "${EXCLUDE_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/" > "${DEPLOY_LOG_DIR}/deploy_${DATE_STRING}.log"
+    rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%i %n %M %l' "${EXCLUDE_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/" > "${DEPLOY_LOG_DIR}/deploy_${DATE_STRING}.log"
     echo "Deployment log created at ${DEPLOY_LOG_DIR}/deploy_${DATE_STRING}.log."
     ;;
     
   try)
-    rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%t %p %i %n %M %l' --dry-run "${EXCLUDE_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/"
+    rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%i %n %M %l' --dry-run "${EXCLUDE_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/"
     ;;
     
   *)
