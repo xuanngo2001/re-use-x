@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 # Description: Copy from SOURCE/ to DESTINATION/ and delete extraneous files from the receiving side.
+# Usage: this_script.sh <ACTION> <SOURCE_DIR> <DESTINATION_DIR> [EXCLUDE_LIST]
 
 ACTION=$1
 SOURCE_DIR=$2
