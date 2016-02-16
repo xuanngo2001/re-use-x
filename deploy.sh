@@ -72,6 +72,7 @@ case "${ACTION}" in
     
   *)
     echo "Error: ${ACTION}: Unknown action. Aborted!"
+    echo "${CMD_EXAMPLES}"
     exit 1
     ;;    
 esac
