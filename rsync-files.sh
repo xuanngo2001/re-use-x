@@ -10,6 +10,7 @@ DEST_DIR=$3
 FILE_LIST=$4
 
 FILES_FROM_OPTION=""
+SCRIPT_NAME=$(basename "$0")
 
 # Error handling
   CMD_EXAMPLES=$(printf " %s\n %s\n %s\n" \
@@ -18,26 +19,26 @@ FILES_FROM_OPTION=""
                         " e.g. $0 commit /some/source/ /some/destination/ exclude.txt"\
                 )
 	if [ -z "${ACTION}" ]; then
-	  echo "$0: Error: Action can't be empty. Aborted!"
+	  echo "${SCRIPT_NAME}: Error: Action can't be empty. Aborted!"
 	  echo "${CMD_EXAMPLES}"
 	  exit 1;
 	fi
 	
 	if [ ! -d "${SOURCE_DIR}" ]; then
-	  echo "$0: Error: Source directory: ${SOURCE_DIR}: no such directory. Aborted!"
+	  echo "${SCRIPT_NAME}: Error: Source directory: ${SOURCE_DIR}: no such directory. Aborted!"
 	  echo "${CMD_EXAMPLES}"
 	  exit 1;
 	fi
 	
 	if [ ! -d "${DEST_DIR}" ]; then
-	  echo "$0: Error: Destination directory: ${DEST_DIR}: no such directory. Aborted!"
+	  echo "${SCRIPT_NAME}: Error: Destination directory: ${DEST_DIR}: no such directory. Aborted!"
 	  echo "${CMD_EXAMPLES}"
 	  exit 1;
 	fi
 	
 	if [ ! -z "${FILE_LIST}" ]; then
 		if [ ! -f "${FILE_LIST}" ]; then
-		  echo "$0: Error: Specific file list: ${FILE_LIST}: no such file. Aborted!"
+		  echo "${SCRIPT_NAME}: Error: Specific file list: ${FILE_LIST}: no such file. Aborted!"
 		  echo "${CMD_EXAMPLES}"
 		  exit 1;
 		else
@@ -65,7 +66,7 @@ case "${ACTION}" in
     ;;
     
   *)
-    echo "Error: Unknown action: ${ACTION}. Aborted!"
+    echo "${SCRIPT_NAME}: Error: Unknown action: ${ACTION}. Aborted!"
     echo "${CMD_EXAMPLES}"
     exit 1
     ;;    
