@@ -26,7 +26,9 @@ WEB_ROOT_DIR=$(readlink -ev "${WEB_ROOT_DIR}")
 APACHE_DIR=/var/www/html/${APACHE_SYMBOLIC_NAME}
 rm -f ${APACHE_DIR}
 ln -s ${WEB_ROOT_DIR} ${APACHE_DIR}
-chmod -R 777 ${WEB_ROOT_DIR}
+#chmod -R 777 ${WEB_ROOT_DIR}
+chown -R www-data:www-data ${WEB_ROOT_DIR}
+chmod -R 755 ${WEB_ROOT_DIR}
 
 # Display symbolic links
 #########################
