@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 # Description: Setup Apache.
+SCRIPT_NAME=$(basename "$0")
 
 WEB_ROOT_DIR=$1
 APACHE_SYMBOLIC_NAME=$2
@@ -8,14 +9,14 @@ APACHE_SYMBOLIC_NAME=$2
 # Error handling
 ##################
 if [ $# -ne 2 ]; then
-	echo "$0: Error: Missing arguments. Aborted!"
-	echo "   e.g.: $0  WEB_ROOT_DIR APACHE_SYMBOLIC_NAME"
-	echo "   e.g.: $0  /path/to/drupal/ opw"
+	echo "${SCRIPT_NAME}: Error: Missing arguments. Aborted!"
+	echo "   e.g.: ${SCRIPT_NAME}  WEB_ROOT_DIR APACHE_SYMBOLIC_NAME"
+	echo "   e.g.: ${SCRIPT_NAME}  /path/to/drupal/ opw"
 	exit 1;
 fi
 
 if [ ! -d ${WEB_ROOT_DIR} ]; then
-  echo "$0: Error: ${WEB_ROOT_DIR} is not a directory."
+  echo "${SCRIPT_NAME}: Error: ${WEB_ROOT_DIR} is not a directory."
   exit 1;
 fi
 
@@ -32,4 +33,4 @@ chmod -R 755 ${WEB_ROOT_DIR}
 
 # Display symbolic links
 #########################
-echo "$0: $(ls -l /var/www/html/ | grep ${APACHE_SYMBOLIC_NAME})"
+echo "${SCRIPT_NAME}: Linked ${APACHE_SYMBOLIC_NAME} -> ${WEB_ROOT_DIR}"
