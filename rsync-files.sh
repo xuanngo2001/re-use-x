@@ -60,11 +60,6 @@ case "${ACTION}" in
     rsync -a --checksum --progress --itemize-changes --stats --out-format='%i %n %M %l' "${FILES_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/"
     ;;
 
-  commit-quiet| cq)
-    # Really commit. 
-    rsync -a --checksum "${FILES_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/"
-    ;;
-    
   try)
     rsync -a --checksum --progress --itemize-changes --stats --out-format='%i %n %M %l' --dry-run "${FILES_FROM_OPTION}" "${SOURCE_DIR}/" "${DEST_DIR}/"
     ;;
