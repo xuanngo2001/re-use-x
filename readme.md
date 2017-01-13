@@ -3,4 +3,4 @@ Useful re-usable scripts.
 
 # Update other projects
 
-    ./update-cld.sh
+    ./update-projects.sh
