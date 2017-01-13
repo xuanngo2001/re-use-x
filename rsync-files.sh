@@ -37,13 +37,15 @@ SCRIPT_NAME=$(basename "$0")
 	fi
 	
 	if [ ! -z "${FILE_LIST}" ]; then
-		if [ ! -f "${FILE_LIST}" ]; then
+		if [ ! -e "${FILE_LIST}" ]; then
 		  echo "${SCRIPT_NAME}: Error: Specific files list to copy: ${FILE_LIST}: no such file. Aborted!"
 		  echo "${CMD_EXAMPLES}"
 		  exit 1;
 		else
-		  # Construct exclude option.
-      FILE_LIST=$(readlink -ev "${FILE_LIST}")
+		  # Construct include option.
+		  if [ -f "${FILE_LIST}" ]; then
+		    FILE_LIST=$(readlink -ev "${FILE_LIST}")
+		  fi
 		  FILES_FROM_OPTION="--files-from=${FILE_LIST}"	
 	  fi
 	fi
