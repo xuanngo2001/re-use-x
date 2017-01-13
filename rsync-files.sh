@@ -18,8 +18,8 @@ SCRIPT_NAME=$(basename "$0")
                         " e.g. $0 try    /some/source/ /some/destination/"\
                         " e.g. $0 commit /some/source/ /some/destination/ specific-files-to-copy.txt"\
                 )
-	if [ -z "${ACTION}" ]; then
-	  echo "${SCRIPT_NAME}: Error: Action can't be empty. Aborted!"
+	if [ $# -lt 3 ]; then
+	  echo "${SCRIPT_NAME}: Error: The first 3 arguments are required. Aborted!"
 	  echo "${CMD_EXAMPLES}"
 	  exit 1;
 	fi
