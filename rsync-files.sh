@@ -16,7 +16,7 @@ SCRIPT_NAME=$(basename "$0")
   CMD_EXAMPLES=$(printf " %s\n %s\n %s\n" \
                         " e.g. $0 <ACTION> <SOURCE_DIR> <DESTINATION_DIR> [FILE_LIST]"\
                         " e.g. $0 try    /some/source/ /some/destination/"\
-                        " e.g. $0 commit /some/source/ /some/destination/ exclude.txt"\
+                        " e.g. $0 commit /some/source/ /some/destination/ specific-files-to-copy.txt"\
                 )
 	if [ -z "${ACTION}" ]; then
 	  echo "${SCRIPT_NAME}: Error: Action can't be empty. Aborted!"
@@ -38,7 +38,7 @@ SCRIPT_NAME=$(basename "$0")
 	
 	if [ ! -z "${FILE_LIST}" ]; then
 		if [ ! -f "${FILE_LIST}" ]; then
-		  echo "${SCRIPT_NAME}: Error: Specific file list: ${FILE_LIST}: no such file. Aborted!"
+		  echo "${SCRIPT_NAME}: Error: Specific files list to copy: ${FILE_LIST}: no such file. Aborted!"
 		  echo "${CMD_EXAMPLES}"
 		  exit 1;
 		else
