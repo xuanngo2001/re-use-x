@@ -43,8 +43,8 @@ SCRIPT_NAME=$(basename "$0")
 		  exit 1;
 		else
 		  # Construct exclude option.
+      FILE_LIST=$(readlink -ev "${FILE_LIST}")
 		  FILES_FROM_OPTION="--files-from=${FILE_LIST}"	
-		  FILE_LIST=$(readlink -ev "${FILE_LIST}")
 	  fi
 	fi
 	
