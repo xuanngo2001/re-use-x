@@ -6,7 +6,7 @@ FILE_LIST=$(find . -name '*.sh' -type f | grep -v $0)
 
 
 
-# Update in CLD
+# Update in firstboot
 SOURCE_DIR=$(readlink -ev .)
-DESTINATION_DIR=$(readlink -ev "/media/master/github/cust-live-deb/scripts/repository/inst-min-con-xtra-re-use-x/re-use-x")
+DESTINATION_DIR=$(readlink -ev "/media/master/github/firstboot/apps/reusex/run/")
 ./rsync-files.sh commit "${SOURCE_DIR}" "${DESTINATION_DIR}" <(echo "${FILE_LIST}")
