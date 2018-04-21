@@ -12,7 +12,7 @@ target_dir=$1
   target_dir=$(readlink -ev "${target_dir}")
   
 # Backup
-  date_string=$(time-id sec-medium)
+  date_string=$(time-id.sh sec-medium)
   target_parent_dir_path="$(dirname "${target_dir}")"
   target_dir_name="$(basename "${target_dir}")"
   output_archive="${target_parent_dir_path}/${target_dir_name}_${date_string}.tar.bz2"
