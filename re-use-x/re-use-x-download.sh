@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# Description: Download the latest version of re-use-x scripts.
+# Description: Download the latest version of re-use-x scripts from github.
 
 script_name=$(basename $0)
 while IFS='' read -r script_file || [[ -n "${script_file}" ]]; do
