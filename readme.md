@@ -3,4 +3,4 @@ Useful re-usable scripts.
 
 # Update other projects
 
-    ./update-projects.sh
+    ./update-fb-re-use-x.sh

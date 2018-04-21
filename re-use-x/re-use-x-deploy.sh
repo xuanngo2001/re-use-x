@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# Description: Deploy re-use-x scripts in /usr/local/bin
+# Description: Deploy re-use-x scripts in /usr/local/bin .
 #   TODO: Deal with different file versions.
 
 # While loop.
