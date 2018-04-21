@@ -1,5 +1,4 @@
 # Description: Delete old backup files.
-#   Note: By design, if not run daily, then older files than specified days will be preserved.
 #   -Usage: ./thiscript.sh archive_prefix delete_after_days
 #           Delete backup files older than 7 days: ./thiscript.sh myBackupFile_ 7
 script_name=$(basename $0)
@@ -27,7 +26,8 @@ del_after_days=$2
 
   archive_list=$(ls -1 "${archive_prefix}"*????-??-??.*.tar.bz2 | sort -r)
   if [ -z "${archive_list}" ]; then echo "${script_name}: No backup archive ${archive_prefix}*????-??-??.*.tar.bz2 to delete!"; exit 0; fi
-
+  
+  # Preserve the oldest and newest backup to guarantee that not all backups are deleted.
   archive_list=$(echo "${archive_list}" | tail -n +2 ) # Remove first line
   archive_list=$(echo "${archive_list}" | head -n -1 ) # Remove last line
 
