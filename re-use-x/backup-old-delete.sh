@@ -1,4 +1,5 @@
 # Description: Delete old backup files.
+#   Note: By design, if not run daily, then older files than specified days will be preserved.
 #   -Usage: ./thiscript.sh archive_prefix delete_after_days
 #           Delete backup files older than 7 days: ./thiscript.sh myBackupFile_ 7
 script_name=$(basename $0)
