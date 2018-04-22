@@ -1,3 +1,5 @@
+#!/bin/bash
+set -e
 # Description: Delete old backup files.
 #   -Usage: ./thiscript.sh archive_prefix delete_after_days
 #           Delete backup files older than 7 days: ./thiscript.sh myBackupFile_ 7

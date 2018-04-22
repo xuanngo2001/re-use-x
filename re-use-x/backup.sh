@@ -1,3 +1,5 @@
+#!/bin/bash
+set -e
 # Description: Backup target_dir path.
 #   -Depends on: time-id.sh
 
