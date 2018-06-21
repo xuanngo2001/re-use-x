@@ -15,9 +15,9 @@ exclude_from_option=""
 
 # Error handling
   cmd_examples=$(printf " %s\n %s\n %s\n" \
-                        " e.g. $0 <action> <source_dir> <destination_dir> [exclude_list]"\
-                        " e.g. $0 try /some/source/ /some/destination/"\
-                        " e.g. $0 commit /some/source/ /some/destination/ exclude.txt"\
+                        " e.g. ${script_name} <action> <source_dir> <destination_dir> [exclude_list]"\
+                        " e.g. ${script_name} try /some/source/ /some/destination/"\
+                        " e.g. ${script_name} commit /some/source/ /some/destination/ exclude.txt"\
                 )
 	if [ -z "${action}" ]; then
 	  echo "$0: Error: ${script_name}: Action can't be empty. Aborted!"
