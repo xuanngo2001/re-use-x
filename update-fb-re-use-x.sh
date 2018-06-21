@@ -11,6 +11,7 @@ re_use_x_script_dir=$(readlink -ev ./re-use-x)
 # Commit re-use-x at firstboot.
   (
     cd "${fb_run_dir}"
+    # Git commands execution order is important.
     git ls-files --deleted -z | xargs -r -0 git rm && git commit -m 're-use-x: commit deleted files.' || true
     git ls-files --modified -z | xargs -r -0 git commit -m 're-use-x: commit changed files.'
     git ls-files --others -z | xargs -r -0 git add && git commit -m 're-use-x: commit new files.' || true
