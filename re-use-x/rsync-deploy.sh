@@ -64,14 +64,19 @@ exclude_from_option=""
     
     commit)
       # Really commit deployment. 
-      rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%i %n %M %l' "${exclude_from_option}" "${source_dir}/" "${destination_dir}/" > "${deploy_log_dir}/deploy_${date_string}.log"
+      rsync -a --checksum --progress --itemize-changes --stats --out-format='%i %n %M %l' "${exclude_from_option}" "${source_dir}/" "${destination_dir}/" > "${deploy_log_dir}/deploy_${date_string}.log"
       echo "Deployment log created at ${deploy_log_dir}/deploy_${date_string}.log."
       ;;
       
     try)
       rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%i %n %M %l' --dry-run "${exclude_from_option}" "${source_dir}/" "${destination_dir}/"
       ;;
-      
+
+    commit-clean) # Same as commit) but dangerous due to option '--delete-after'. Wrong path will delete all files of that path.
+      rsync -a --checksum --delete-after --progress --itemize-changes --stats --out-format='%i %n %M %l' "${exclude_from_option}" "${source_dir}/" "${destination_dir}/" > "${deploy_log_dir}/deploy_${date_string}.log"
+      echo "Deployment log created at ${deploy_log_dir}/deploy_${date_string}.log."
+      ;;
+               
     *)
       echo "Error: ${script_name}: Unknown action: ${action}. Aborted!"
       echo "${cmd_examples}"
