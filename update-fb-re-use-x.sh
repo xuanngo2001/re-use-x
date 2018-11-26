@@ -2,7 +2,7 @@
 set -e
 # Description: Update re-use-x in firstboot.
 
-fb_run_dir=$(readlink -ev /media/master/github/firstboot/apps/re-use-x/run)
+fb_run_dir=$(readlink -ev /media/master/github/firstboot/firstboot/re-use-x/run)
 re_use_x_script_dir=$(readlink -ev ./re-use-x)
 
 # Update re-use-x to firstboot.
